@@ -1,31 +1,75 @@
 .message {
-
+    margin-left: 70px;
+    width: 1140px;
 }
 
 .imageAndText {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    /*display: flex;*/
 
 }
 
 .imageAndText img {
-
+    margin: 15px 10px 0 0;
+    height: 50px;
+    width: 50px;
 }
 
 .text {
+    /*position: relative;*/
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0 0 550px;
+    height: 73px;
+    width: 527px;
+    background: url("/src/s2-homeworks/hw01/img/Rectangle 3.1.png");
+    background-position: 50% 0%;
 
 }
 
 .text:after {
-
+    /*height: 60px;*/
+    width: 527px;
+    background: url("/src/s2-homeworks/hw01/img/Rectangle 3.1.png");
+    background-size: 100% 100%;
 }
 
 .name {
-
+    margin: 15px 0 0 0;
+    text-align: right;
+    width: 500px;
+    color: #FFFFFF;
 }
 
 .messageText {
-
+    /*display: flex;*/
+    /*flex-direction: row-reverse;*/
+    /*flex-wrap: wrap;*/
+    margin: 0 0 0 0;
+    width: 500px;
+    text-align: right;
+    white-space: pre-wrap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #FFFFFF;
 }
 
 .time {
+    margin: 0 20px 0 0;
+    text-align: right;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    color: #000000;
 
 }

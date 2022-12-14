@@ -40,7 +40,7 @@ const MessageSender = (props: any) => {
     }
 
     return (
-        <>
+        <div className={s.wrapper}>
             {messages.map((m) => (
                 <M key={'message' + m.id} message={m} />
             ))}
@@ -61,7 +61,6 @@ const MessageSender = (props: any) => {
                 <button
                     id={'hw1-button'}
                     className={s.button}
-
                     onClick={addMessage}
                 >
                     {/*текст кнопки могут изменить студенты*/}
@@ -69,7 +68,7 @@ const MessageSender = (props: any) => {
                     {/**/}
                 </button>
             </div>
-        </>
+        </div>
     )
 }
 
