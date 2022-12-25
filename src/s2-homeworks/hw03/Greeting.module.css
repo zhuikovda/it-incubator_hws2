@@ -8,15 +8,17 @@
 
 .error {
     color: red;
+    
 }
 
 .input {
     width: 372px;
     height: 36px;
+    border: 2px solid black;
 }
 
-.input:focus {
-    border: 2px solid red;
+.input input:focus {
+    outline: none;
 }
 
 .errorInput {
