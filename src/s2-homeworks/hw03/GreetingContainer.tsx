@@ -53,7 +53,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         // need to fix any
         setName(e.currentTarget.value); // need to fix
 
-        error && setError("Ошибка! Введите имя!");
+        error && setError("");
     };
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback);
