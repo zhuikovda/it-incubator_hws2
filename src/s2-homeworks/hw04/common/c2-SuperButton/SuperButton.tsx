@@ -20,7 +20,7 @@ const SuperButton: React.FC<SuperButtonPropsType> = ({
     const finalClassName =
         s.button +
         (disabled ? " " + s.disabled : " " + s.button) +
-        (xType === "red" ? " " + s.red : " " + s.secondary) +
+        (xType === "red" ? " " + s.red : " " + s.default) +
         (className ? " " + s.className : ""); // задачка на смешивание классов
 
     return (
