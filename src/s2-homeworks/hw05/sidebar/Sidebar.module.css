@@ -11,12 +11,14 @@
 }
 
 .nav a {
+    background-color: aqua;
 }
 
 .nav a:hover {
 }
 
 .nav a.active {
+    background-color: rgb(98, 253, 2);
 }
 .close {
 }
