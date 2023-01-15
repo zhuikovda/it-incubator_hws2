@@ -11,7 +11,6 @@
 .disabled {
     width: 133px;
     height: 30px;
-
     background: #004d99;
     opacity: 0.5;
     border-radius: 3px;
@@ -32,6 +31,8 @@ border-radius: 3px;
 
     background: #0066cc;
     border-radius: 3px;
+    margin-right: 10px;
+    color: aliceblue;
 }
 
 .red {
@@ -45,18 +46,22 @@ border-radius: 3px;
 }
 
 .default:hover {
+    background: #d9ff00;
 }
 
 .red:hover {
 }
 
 .secondary:hover {
+    /* background: #017df9; */
 }
 
 .default:active {
+    background: #00ffc3;
 }
 
 .secondary:active {
+    /* background: #000; */
 }
 
 .red:active {
