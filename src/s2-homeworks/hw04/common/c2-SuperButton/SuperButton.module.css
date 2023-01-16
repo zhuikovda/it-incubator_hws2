@@ -18,9 +18,9 @@
 
 .secondary {
     width: 176px;
-height: 30px;
-border: 1px solid #0066CC;
-border-radius: 3px;
+    height: 30px;
+    border: 1px solid #0066cc;
+    border-radius: 3px;
 }
 
 .default {
@@ -37,12 +37,12 @@ border-radius: 3px;
 
 .red {
     width: 129px;
-height: 30px;
+    height: 30px;
 
-/* Danger/100 */
+    /* Danger/100 */
 
-background: #CC1439;
-border-radius: 3px;
+    background: #cc1439;
+    border-radius: 3px;
 }
 
 .default:hover {
