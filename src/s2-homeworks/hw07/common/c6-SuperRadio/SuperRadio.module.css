@@ -1,15 +1,36 @@
-.radio {
+.radio[type="radio"] {    
+width: 24px;
+height: 24px;
+margin: 10px 10px 0 30px;
+background: rgb(0, 0, 0);
 }
 
 .radio::before {
+    border: 1px solid #FE9013;
 }
 
+input[type="radio"] {
+    background-color: rgb(1, 1, 1);
+}
 
 .radio:checked::before {
+    
 }
 
 .label {
+display: flex;
+/* justify-content: space-between; */
+width: 200px;
+text-align: start;
+/* background: rgb(0, 0, 0); */
+}
+
+.label span {
+    padding-top: 10px;  
 }
 
 .options {
+    /* display: flex;
+    width: 24px; */
+    color: rgb(0, 0, 0);
 }
