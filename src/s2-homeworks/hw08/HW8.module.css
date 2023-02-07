@@ -5,15 +5,21 @@
 }
 
 .users {
+    width: 606px;
+    height: 36px;
 }
 
 .buttonsContainer {
 }
 
 .container {
+    margin-bottom: 25px;
 }
 
 .thead {
+    width: 606px;
+    height: 36px;
+    background: #e5e5e5;
 }
 
 .nameCol {
