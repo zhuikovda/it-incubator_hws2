@@ -2,7 +2,29 @@
 }
 
 .wrapper {
+    display: flex;
+/* justify-content: start; */
+    width: 200px;
+    margin: 5px;
 }
 
 .number {
+    /* position: absolute; */
+width: 21px;
+height: 20px;
+/* left: 70px;
+top: 296px; */
+margin: 5px 10px 0 10px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height, or 125% */
+
+
+color: #000000;
+
 }
+
+
