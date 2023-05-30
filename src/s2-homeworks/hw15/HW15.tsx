@@ -5,6 +5,8 @@ import axios from "axios";
 import SuperPagination from "./common/c9-SuperPagination/SuperPagination";
 import { useSearchParams } from "react-router-dom";
 import SuperSort from "./common/c10-SuperSort/SuperSort";
+import { log } from "console";
+import { type } from "os";
 
 /*
  * 1 - дописать SuperPagination+
@@ -21,7 +23,13 @@ type TechType = {
   developer: string;
 };
 
-const getTechs = (params: any) => {
+type ParamsType = {
+  sort: string;
+  page: number;
+  count: number;
+};
+
+const getTechs = (params: ParamsType) => {
   return axios
     .get<{ techs: TechType[]; totalCount: number }>(
       "https://samurai.it-incubator.io/api/3.0/homework/test3",
@@ -40,7 +48,7 @@ const HW15 = () => {
   const [totalCount, setTotalCount] = useState(100);
   const [searchParams, setSearchParams] = useSearchParams();
   const [techs, setTechs] = useState<TechType[]>([]);
-  // console.log(count);
+  //   console.log(count);
 
   const sendQuery = (params: any) => {
     setLoading(true);
@@ -49,9 +57,10 @@ const HW15 = () => {
       // сохранить пришедшие данные
       //
       if (res) {
+        // console.log(res.data.techs);
         setTechs(res.data.techs);
         setTotalCount(res.data.totalCount);
-        setLoading(false)
+        setLoading(false);
       }
     });
   };
@@ -60,9 +69,8 @@ const HW15 = () => {
     // делает студент
     setPage(newPage);
     setCount(newCount);
-    sendQuery(newCount);
+    sendQuery(newPage);
     setSearchParams();
-    //
   };
 
   const onChangeSort = (newSort: string) => {
@@ -70,8 +78,9 @@ const HW15 = () => {
     setSort(newSort);
     setPage(1); // при сортировке сбрасывать на 1 страницу
     sendQuery(newSort);
-    setSearchParams()
+    setSearchParams();
     //
+    // console.log(newSort);
   };
 
   useEffect(() => {
