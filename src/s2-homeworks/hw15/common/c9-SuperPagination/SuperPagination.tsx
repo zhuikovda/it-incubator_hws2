@@ -1,65 +1,74 @@
-import React from 'react'
-import SuperSelect from '../../../hw07/common/c5-SuperSelect/SuperSelect'
-import {Pagination} from '@mui/material'
-import s from './SuperPagination.module.css'
+import React, { ChangeEvent, useState } from "react";
+import SuperSelect from "../../../hw07/common/c5-SuperSelect/SuperSelect";
+import { Pagination } from "@mui/material";
+import s from "./SuperPagination.module.css";
+import { log } from "console";
 
 export type SuperPaginationPropsType = {
-    id?: string
-    page: number
-    itemsCountForPage: number
-    totalCount: number
-    onChange: (page: number, count: number) => void
-}
+  id?: string;
+  page: number;
+  itemsCountForPage: number;
+  totalCount: number;
+  onChange: (page: number, count: number) => void;
+};
 
-const SuperPagination: React.FC<SuperPaginationPropsType> = (
-    {
-        page, itemsCountForPage, totalCount, onChange, id = 'hw15',
-    }
-) => {
-    const lastPage = 10 // пишет студент // вычислить количество страниц
+const SuperPagination: React.FC<SuperPaginationPropsType> = ({
+  page,
+  itemsCountForPage,
+  totalCount,
+  onChange,
+  id = "hw15",
+}) => {
+  // const lastPage = 10; // пишет студент // вычислить количество страниц
 
-    const onChangeCallback = (event: any, page: number) => {
-        // пишет студент
-    }
+  // const [page, setPage] = useState(1);
 
-    const onChangeSelect = (event: any) => {
-        // пишет студент
-    }
+  const lastPage = Math.ceil(totalCount / itemsCountForPage);
 
-    return (
-        <div className={s.pagination}>
-            <Pagination
-                id={id + '-pagination'}
-                sx={{
-                    // стили для Pagination // пишет студент
-                }}
-                page={page}
-                count={lastPage}
-                onChange={onChangeCallback}
-                hideNextButton
-                hidePrevButton
-            />
+  const onChangeCallback = (event: any, page: number) => {
+    // пишет студент
+    onChange(
+      page,
+      event.currentTarget.value ? +event.currentTarget.value : itemsCountForPage
+    );
+  };
 
-            <span className={s.text1}>
-                показать
-            </span>
+  const onChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+    onChangeCallback(event, page);
+  };
 
-            <SuperSelect
-                id={id + '-pagination-select'}
-                value={itemsCountForPage}
-                options={[
-                    {id: 4, value: 4},
-                    {id: 7, value: 7},
-                    {id: 10, value: 10},
-                ]}
-                onChange={onChangeSelect}
-            />
+  return (
+    <div className={s.pagination}>
+      <Pagination
+        id={id + "-pagination"}
+        sx={
+          {
+            // стили для Pagination // пишет студент
+          }
+        }
+        page={page}
+        count={lastPage}
+        onChange={onChangeCallback}
+        hideNextButton
+        hidePrevButton
+      />
 
-            <span className={s.text2}>
-                строк в таблице
-            </span>
-        </div>
-    )
-}
+      <span className={s.text1}>показать</span>
 
-export default SuperPagination
+      <SuperSelect
+        id={id + "-pagination-select"}
+        value={itemsCountForPage}
+        options={[
+          { id: 4, value: 4 },
+          { id: 7, value: 7 },
+          { id: 10, value: 10 },
+        ]}
+        onChange={onChangeSelect}
+      />
+
+      <span className={s.text2}>строк в таблице</span>
+    </div>
+  );
+};
+
+export default SuperPagination;
