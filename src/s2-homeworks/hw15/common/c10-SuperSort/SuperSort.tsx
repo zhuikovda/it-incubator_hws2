@@ -25,7 +25,7 @@ export const pureChange = (sort: string, down: string, up: string) => {
   } else if (sort) {
     return down;
   }
-return down
+return ""
 };
 
 const SuperSort: React.FC<SuperSortPropsType> = ({
