@@ -57,7 +57,7 @@ const HW15 = () => {
       // сохранить пришедшие данные
       //
       if (res) {
-        console.log(res.data.techs);
+        // console.log(res.data.techs);
         setTechs(res.data.techs);
         setTotalCount(res.data.totalCount);
         setLoading(false);
