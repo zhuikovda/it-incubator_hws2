@@ -48,7 +48,6 @@ const HW15 = () => {
   const [totalCount, setTotalCount] = useState(100);
   const [searchParams, setSearchParams] = useSearchParams();
   const [techs, setTechs] = useState<TechType[]>([]);
-  //   console.log(sort);
 
   const sendQuery = (params: any) => {
     setLoading(true);
@@ -57,13 +56,11 @@ const HW15 = () => {
       // сохранить пришедшие данные
       //
       if (res) {
-        // console.log(res.data.techs);
         setTechs(res.data.techs);
         setTotalCount(res.data.totalCount);
         setLoading(false);
       }
     });
-    // console.log(params);
   };
 
   const onChangePagination = (newPage: number, newCount: number) => {
@@ -72,7 +69,6 @@ const HW15 = () => {
     setCount(newCount);
     sendQuery({ sort: sort, page: newPage, count: newCount });
     setSearchParams();
-    // console.log(setSearchParams());
   };
 
   const onChangeSort = (newSort: string) => {
@@ -81,8 +77,6 @@ const HW15 = () => {
     setPage(1); // при сортировке сбрасывать на 1 страницу
     sendQuery({ sort: newSort, page: page, count: count });
     setSearchParams();
-    //
-    // console.log(setSearchParams());
   };
 
   useEffect(() => {
